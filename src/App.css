@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif; /* Use a more modern font */
+  background-color: #f8f9fa; /* Light, neutral background */
+  color: #343a40; /* Dark, readable text color */
+  display: flex; /* Center the content vertically and horizontally */
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  min-height: 100vh; /* Ensure full viewport height */
+}
+
+
+.container {
+  background: #fff;
+  padding: 30px; /* Increased padding */
+  width: 400px; /* Slightly wider container */
+  border-radius: 10px; /* More rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer shadow */
+  text-align: left; /* Align text to the left */
+}
+
+h2 {
+  margin-bottom: 20px; /* Add space below the heading */
+  color: #007bff; /* Blue heading color */
+}
+
+label {
+  display: block; /* Place labels above inputs */
+  margin-bottom: 5px;
+  font-weight: 500; /* Slightly bolder labels */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] { /* Style all text-based inputs */
+  width: calc(100% - 22px); /* Account for padding and border */
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da; /* Light gray border */
+  border-radius: 6px; /* Slightly more rounded inputs */
+  font-size: 16px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Smooth transitions */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #80bdff; /* Highlight on focus */
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Subtle focus ring */
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #007bff;
   color: white;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out; /* Smooth transition */
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #0069d9; /* Darker blue on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.form-group { /* Add spacing between form elements */
+  margin-bottom: 15px;
+}
+
+.btn-primary { /* Style for primary buttons */
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+/* Optional: Add some responsive styles */
+@media (max-width: 576px) {
+  .container {
+      width: 90%; /* Make container full width on small screens */
   }
 }

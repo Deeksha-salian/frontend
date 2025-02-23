@@ -1,0 +1,139 @@
+/* General navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ccdee6; /* Light blue */
+    padding: 1rem 2rem;
+    color: rgb(28, 20, 20);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Logo and app name */
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .app-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(8, 7, 27);
+  }
+  
+  /* Navbar links */
+  .navbar-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .navbar-links a {
+    text-decoration: none;
+    color: rgb(13, 9, 9);
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .navbar-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Dropdown menu */
+  .navbar-dropdown {
+    position: relative;
+  }
+  
+  .dropdown-button {
+    background: none;
+    border: none;
+    color: rgb(13, 10, 10);
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    color: rgb(69, 68, 68);
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(84, 81, 81, 0.1);
+  }
+  
+  .navbar-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu li {
+    padding: 0.5rem 1rem;
+  }
+  
+  .dropdown-menu li a {
+    color: rgb(49, 47, 47);
+    text-decoration: none;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #f4f4f4;
+  }
+  
+  /* Search bar */
+  .navbar-search {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .navbar-search input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .navbar-search button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #333;
+    color: rgb(116, 108, 108);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .navbar-search button:hover {
+    background-color: #b7b3b3;
+  }
+  
+  /* Icons (Favorites and Login) */
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .navbar-icon {
+    color: rgb(67, 58, 58);
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  
+  .navbar-icon:hover {
+    color: #ccc;
+  }
+  
