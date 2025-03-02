@@ -6,6 +6,7 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddRecipe from "./Pages/AddRecipe";
+import RecipeDetails from "./Pages/RecipeDetails";
 
 
 
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/add-recipe" element={<AddRecipe />} />
+        <Route path="/recipe/:id" element={<RecipeDetails />} />
       </Routes>
     </Router>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Carousel from 'react-bootstrap/Carousel';
+import { Link as ScrollLink } from "react-scroll";
 import "../Home.css";
 import breakfastRecipes from "../Data/breakfastRecipes";
 import lunchRecipes from "../Data/lunchRecipes";
@@ -9,10 +9,10 @@ import dinnerRecipes from "../Data/dinnerRecipes";
 import dessertsRecipes from "../Data/dessertsRecipes";
 
 const categories = [
-  { name: "Breakfast", recipes: breakfastRecipes },
-  { name: "Lunch", recipes: lunchRecipes },
-  { name: "Dinner", recipes: dinnerRecipes },
-  { name: "Desserts", recipes: dessertsRecipes },
+  { name: "Breakfast", id: "breakfast", recipes: breakfastRecipes },
+  { name: "Lunch", id: "lunch", recipes: lunchRecipes },
+  { name: "Dinner", id: "dinner", recipes: dinnerRecipes },
+  { name: "Desserts", id: "desserts", recipes: dessertsRecipes },
 ];
 
 const Home = () => {
@@ -20,6 +20,54 @@ const Home = () => {
     <div className="hero-section">
       <Container className="mt-4">
         {/* Hero Section with Carousel */}
+        <div id="carouselExample" className="carousel slide">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1673108852141-e8c3c22a4a22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D.jpg"
+                className="d-block w-100"
+                style={{ height: "500px", objectFit: "cover" }}
+                alt="..."
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D.jpg"
+                className="d-block w-100"
+                style={{ height: "500px", objectFit: "cover" }}
+                alt="..."
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src="https://images.unsplash.com/photo-1562059390-a761a084768e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTEwfHxmb29kfGVufDB8fDB8fHww.jpg"
+                className="d-block w-100"
+                style={{ height: "500px", objectFit: "cover" }}
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        {/* Hero Text */}
         <Row className="align-items-center mb-5">
           <Col md={6}>
             <div className="hero-text">
@@ -32,24 +80,12 @@ const Home = () => {
               </Button>
             </div>
           </Col>
-          <Col md={6}>
-            <Carousel>
-              <Carousel.Item>
-                <img className="d-block w-100" src="https://images.unsplash.com/photo-1562059390-a761a084768e?w=600&auto=format&fit=crop&q=60" alt="Slide 1" />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img className="d-block w-100" src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=600&auto=format&fit=crop&q=60" alt="Slide 2" />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img className="d-block w-100" src="https://plus.unsplash.com/premium_photo-1700752343056-e89926bf5ff9?w=600&auto=format&fit=crop&q=60" alt="Slide 3" />
-              </Carousel.Item>
-            </Carousel>
-          </Col>
+          <Col md={6}></Col>
         </Row>
 
         {/* Recipe Categories */}
         {categories.map((category) => (
-          <section key={category.name} className="mb-5">
+          <section key={category.id} id={category.id} className="mb-5">
             <h2 className="text-center mb-4">{category.name} Recipes</h2>
             <Row>
               {category.recipes.map((recipe) => (

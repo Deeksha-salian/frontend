@@ -4,7 +4,13 @@ import { Container, Form, Button } from "react-bootstrap";
 import "./AddRecipe.css";
 
 const AddRecipe = () => {
-  const [recipe, setRecipe] = useState({ name: "", image: "", description: "" });
+  const [recipe, setRecipe] = useState({
+    name: "",
+    image: "",
+    description: "",
+    ingredients: "",
+    instructions: ""
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,11 +38,18 @@ const AddRecipe = () => {
           <Form.Label>Description</Form.Label>
           <Form.Control as="textarea" name="description" value={recipe.description} onChange={handleChange} />
         </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Ingredients</Form.Label>
+          <Form.Control as="textarea" name="ingredients" value={recipe.ingredients} onChange={handleChange} placeholder="Separate ingredients with commas" />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Instructions</Form.Label>
+          <Form.Control as="textarea" name="instructions" value={recipe.instructions} onChange={handleChange} placeholder="Step-by-step instructions" />
+        </Form.Group>
         <Button variant="primary" type="submit">Add Recipe</Button>
       </Form>
     </Container>
   );
 };
 
-export default AddRecipe; // Make sure you're using default export!
-
+export default AddRecipe;

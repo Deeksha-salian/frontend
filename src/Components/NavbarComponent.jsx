@@ -1,10 +1,16 @@
-// src/Components/Navbar.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaHeart, FaUserCircle } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar = () => {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -23,10 +29,10 @@ const Navbar = () => {
         <li className="navbar-dropdown">
           <button className="dropdown-button">Categories</button>
           <ul className="dropdown-menu">
-            <li><Link to="/categories/breakfast">Breakfast</Link></li>
-            <li><Link to="/categories/lunch">Lunch</Link></li>
-            <li><Link to="/categories/dinner">Dinner</Link></li>
-            <li><Link to="/categories/desserts">Desserts</Link></li>
+            <li onClick={() => scrollToSection('breakfast')}>Breakfast</li>
+            <li onClick={() => scrollToSection('lunch')}>Lunch</li>
+            <li onClick={() => scrollToSection('dinner')}>Dinner</li>
+            <li onClick={() => scrollToSection('desserts')}>Desserts</li>
           </ul>
         </li>
       </ul>
